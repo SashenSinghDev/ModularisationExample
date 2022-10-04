@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Feature1Module
 
 final class AppDependencyContainer {
 
