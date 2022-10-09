@@ -8,21 +8,21 @@
 import Foundation
 import Feature
 
-enum ViewStateFeature2 {
+public enum ViewStateFeature2 {
     case initial
     case loadedData(Feature2Model)
 }
 
-final class Feature2ViewModel {
+public final class Feature2ViewModel {
     private let service: Feature2Service
 
-    var stateChanged: (ViewStateFeature2) -> Void = { _ in }
+    public var stateChanged: (ViewStateFeature2) -> Void = { _ in }
 
-    init(service: Feature2Service) {
+    public init(service: Feature2Service) {
         self.service = service
     }
 
-    func loadData() {
+    public func loadData() {
         service.fetchData { [weak self] modelData in
             guard let self = self else { return }
 

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Presentation
 import Feature
 
 public final class Feature2DependencyContainer {

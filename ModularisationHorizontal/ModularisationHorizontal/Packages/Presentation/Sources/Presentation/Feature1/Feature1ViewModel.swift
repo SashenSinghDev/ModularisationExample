@@ -6,7 +6,7 @@
 //
 import Feature
 
-enum ViewStateFeature1 {
+public enum ViewStateFeature1 {
     case initial
     case loadedData(dataValue: String)
 }
@@ -14,9 +14,9 @@ enum ViewStateFeature1 {
 public final class Feature1ViewModel {
     private let service: Feature1Service
 
-    var stateChanged: (ViewStateFeature1) -> Void = { _ in }
+    public var stateChanged: (ViewStateFeature1) -> Void = { _ in }
 
-    init(service: Feature1Service) {
+    public init(service: Feature1Service) {
         self.service = service
     }
 

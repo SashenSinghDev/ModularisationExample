@@ -1,5 +1,5 @@
 //
-//  Feature2ViewController.swift
+//  Feature1ViewController.swift
 //  ModularisationHorizontal
 //
 //  Created by Sashen Singh on 2022/10/09.
@@ -7,16 +7,17 @@
 
 import Foundation
 import UIKit
+import Presentation
 
-public final class Feature2ViewController: UIViewController {
+public final class Feature1ViewController: UIViewController {
 
-    private var viewModel: Feature2ViewModel
+    private var viewModel: Feature1ViewModel
     private let dataLabel: UILabel = {
         let label = UILabel()
         return label
     }()
 
-    init(viewModel: Feature2ViewModel) {
+    init(viewModel: Feature1ViewModel) {
         self.viewModel = viewModel
 
         super.init(nibName: nil, bundle: nil)
@@ -27,7 +28,7 @@ public final class Feature2ViewController: UIViewController {
     }
 
     public override func viewDidLoad() {
-        view.backgroundColor = .blue
+        view.backgroundColor = .red
 
         addLabel()
         bindToViewModel()
@@ -41,8 +42,8 @@ public final class Feature2ViewController: UIViewController {
             switch state {
             case .initial:
                 break
-            case .loadedData(let model):
-                self.dataLabel.text = model.data
+            case .loadedData(let dataValue):
+                self.dataLabel.text = dataValue
             }
         }
     }

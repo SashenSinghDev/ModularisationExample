@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import FeatureImplementation
 import Presentation
+import UI
 
 final class AppDependencyContainer {
 
