@@ -10,7 +10,7 @@ enum ViewStateFeature1 {
     case loadedData(Feature1Model)
 }
 
-final class Feature1ViewModel {
+public final class Feature1ViewModel {
     private let service: Feature1Service
 
     var stateChanged: (ViewStateFeature1) -> Void = { _ in }
@@ -19,7 +19,7 @@ final class Feature1ViewModel {
         self.service = service
     }
 
-    func loadData() {
+    public func loadData() {
         service.fetchData { [weak self] modelData in
             guard let self = self else { return }
 

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import BusinessLogic
 
 public final class Feature1ViewController: UIViewController {
 
