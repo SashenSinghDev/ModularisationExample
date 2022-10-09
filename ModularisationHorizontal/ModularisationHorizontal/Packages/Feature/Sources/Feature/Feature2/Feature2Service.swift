@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol Feature2Service {
+public protocol Feature2Service {
     func fetchData(completion: @escaping (Feature2Model) -> ())
 }

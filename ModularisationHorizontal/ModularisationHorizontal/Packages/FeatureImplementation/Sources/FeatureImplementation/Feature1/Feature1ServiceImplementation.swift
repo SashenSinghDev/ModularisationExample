@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Feature
 
-final class Feature1ServiceImplementation: Feature1Service {
-    func fetchData(completion: @escaping (Feature1Model) -> ()) {
+public final class Feature1ServiceImplementation: Feature1Service {
+    public init() {}
+    public func fetchData(completion: @escaping (Feature1Model) -> ()) {
         let serviceModel = Feature1ServiceModel(data: "Feature1Data")
         let mappedFeatureModel = Feature1Model(feature1ServiceModel: serviceModel)
         completion(mappedFeatureModel)
@@ -17,6 +19,6 @@ final class Feature1ServiceImplementation: Feature1Service {
 
 private extension Feature1Model {
     init(feature1ServiceModel: Feature1ServiceModel) {
-        self.data = feature1ServiceModel.data
+        self.init(data: feature1ServiceModel.data)
     }
 }

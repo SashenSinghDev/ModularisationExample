@@ -4,10 +4,11 @@
 //
 //  Created by Sashen Singh on 2022/10/09.
 //
+import Feature
 
 enum ViewStateFeature1 {
     case initial
-    case loadedData(Feature1Model)
+    case loadedData(dataValue: String)
 }
 
 public final class Feature1ViewModel {
@@ -23,7 +24,7 @@ public final class Feature1ViewModel {
         service.fetchData { [weak self] modelData in
             guard let self = self else { return }
 
-            self.stateChanged(.loadedData(modelData))
+            self.stateChanged(.loadedData(dataValue: modelData.data))
         }
     }
 }

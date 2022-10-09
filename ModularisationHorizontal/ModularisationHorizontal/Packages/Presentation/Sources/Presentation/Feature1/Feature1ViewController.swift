@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import BusinessLogic
 
 public final class Feature1ViewController: UIViewController {
 
@@ -42,8 +41,8 @@ public final class Feature1ViewController: UIViewController {
             switch state {
             case .initial:
                 break
-            case .loadedData(let model):
-                self.dataLabel.text = model.data
+            case .loadedData(let dataValue):
+                self.dataLabel.text = dataValue
             }
         }
     }

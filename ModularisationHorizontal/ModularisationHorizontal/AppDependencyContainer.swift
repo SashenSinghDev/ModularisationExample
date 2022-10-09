@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import FeatureImplementation
+import Presentation
 
 final class AppDependencyContainer {
 
@@ -16,12 +18,12 @@ final class AppDependencyContainer {
     init() {
 
         func makeFeature1ViewController() -> UIViewController {
-            let feature1DependencyContainer = Feature1DependencyContainer()
+            let feature1DependencyContainer = Feature1DependencyContainer(feature1Service: Feature1ServiceImplementation())
             return feature1DependencyContainer.makeFeature1ViewController()
         }
 
         func makeFeature2ViewController() -> UIViewController {
-            let feature2DependencyContainer = Feature2DependencyContainer()
+            let feature2DependencyContainer = Feature2DependencyContainer(feature2Service: Feature2ServiceImplementation())
             return feature2DependencyContainer.makeFeature2ViewController()
         }
 

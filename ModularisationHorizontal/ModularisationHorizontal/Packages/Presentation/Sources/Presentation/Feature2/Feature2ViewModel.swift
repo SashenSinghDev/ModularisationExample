@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Feature
 
 enum ViewStateFeature2 {
     case initial

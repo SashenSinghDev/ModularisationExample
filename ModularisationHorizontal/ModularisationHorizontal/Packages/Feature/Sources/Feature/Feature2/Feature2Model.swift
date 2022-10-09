@@ -7,6 +7,10 @@
 
 import Foundation
 
-struct Feature2Model {
-    let data: String
+public struct Feature2Model {
+    public let data: String
+
+    public init(data: String) {
+        self.data = data
+    }
 }

@@ -7,21 +7,21 @@
 
 import Foundation
 import UIKit
+import Feature
 
-final class Feature2DependencyContainer {
+public final class Feature2DependencyContainer {
 
     private let feature2ViewModel: Feature2ViewModel
 
-    init() {
+    public init(feature2Service: Feature2Service) {
         func makeFeature2ViewModel() -> Feature2ViewModel {
-            let feature2Service = Feature2ServiceImplementation()
             return Feature2ViewModel(service: feature2Service)
         }
 
         feature2ViewModel = makeFeature2ViewModel()
     }
 
-    func makeFeature2ViewController() -> UIViewController {
+    public func makeFeature2ViewController() -> UIViewController {
         let feature2ViewController = Feature2ViewController(viewModel: feature2ViewModel)
         return feature2ViewController
     }
