@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import Feature1Module
+import FeatureModule1UI
+import FeatureImplementations
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
 
-        let dependancyContainer = Feature1DependencyContainer()
+        let dependancyContainer = Feature1DependencyContainer(service: Feature1ServiceImplementation())
 
         window?.backgroundColor = .clear
         window?.rootViewController = dependancyContainer.makeFeature1ViewController()

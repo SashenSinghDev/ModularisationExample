@@ -7,7 +7,8 @@
 
 import Foundation
 import UIKit
-import Feature1Module
+import FeatureModule1UI
+import FeatureImplementations
 import Feature2Module
 
 final class AppDependencyContainer {
@@ -18,7 +19,8 @@ final class AppDependencyContainer {
     init() {
 
         func makeFeature1ViewController() -> UIViewController {
-            let feature1DependencyContainer = Feature1DependencyContainer()
+            let feature1Service = Feature1ServiceImplementation()
+            let feature1DependencyContainer = Feature1DependencyContainer(service: feature1Service)
             return feature1DependencyContainer.makeFeature1ViewController()
         }
 

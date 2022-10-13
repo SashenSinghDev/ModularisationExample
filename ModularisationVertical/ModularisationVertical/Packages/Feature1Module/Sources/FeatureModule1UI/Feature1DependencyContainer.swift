@@ -7,15 +7,16 @@
 
 import Foundation
 import UIKit
+import Feature
+import Presentation
 
 public final class Feature1DependencyContainer {
 
     private let feature1ViewModel: Feature1ViewModel
 
-    public init() {
+    public init(service: Feature1Service) {
         func makeFeature1ViewModel() -> Feature1ViewModel {
-            let feature1Service = Feature1ServiceImplementation()
-            return Feature1ViewModel(service: feature1Service)
+            return Feature1ViewModel(service: service)
         }
 
         feature1ViewModel = makeFeature1ViewModel()
